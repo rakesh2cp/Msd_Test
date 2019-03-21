@@ -50,6 +50,6 @@ The following hdfs directories need to be deleted in case they exist in the runn
 /user/hive/nutrition_data, /user/hive/msd_export_female and /user/hive/msd_export_all
 
 
-To run the ETL flow issue the below command where the script is located.
+To run the ETL flow please issue the below command where the script is located.
 
 sh -x msd_data_populate.sh > msd.log 2>&1
