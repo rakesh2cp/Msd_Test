@@ -30,7 +30,6 @@ nutrition_data, avg_data_val_all_age_grp, avg_data_val_female
 
 
 
-
 Versions followed to build this project are as follows
 ------------------------------------------------------
 Java 1.8,
