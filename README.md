@@ -20,11 +20,11 @@ Assumptions:
 1. for Q1 - Average of each Question’s "Data_Value" by year for all age groups
  Since the YearStart and YearEnd are same for all the rows hence the grouping is done on YearStart column.
 
-2. Below hdfs directories should not exist in the running environment 
+2. Below hdfs directories should not exist in the running environment.
 	/user/hive/nutrition_data
 	/user/hive/msd_export_female
 	/user/hive/msd_export_all
-3. Below tables should not exist under msd database in Hive
+3. Below tables should not exist under msd database in Hive.
 
 nutrition_data, avg_data_val_all_age_grp, avg_data_val_female
 
