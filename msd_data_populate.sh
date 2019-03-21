@@ -3,7 +3,7 @@
 ############################################################
 # This script fetches Nutritional data from the source URL #
 # The Spark programs performs the necessary tranformations #
-# and writes the output to HDFS directory				   #
+# and writes the output to HDFS directory				           #
 # Finally HTML reports generated out of the Output files   #
 # from Spark programs                                      #
 ############################################################
