@@ -39,8 +39,7 @@ Building and running the program.
 ---------------------------------
 The project can be build in  Scala IDE with above version dependencies.
 Once project is build the JAR_PATH and CONF_PATH variables need to be changed in the msd_data_populate.sh script as per the paths where jar ( jar with dependencies) and application.conf is present in the environment its running.
-The hostName  need to be changed as per the environment its running ( e.g. hostName = "hdfs://0.0.0.0:9000" in my case)
-change.
+The hostName  need to be changed as per the environment its running ( e.g. hostName = "hdfs://0.0.0.0:9000" in my case).
 
 The following hdfs directories need to be deleted in case they exist in the running environment.
 
