@@ -14,6 +14,7 @@ Steps Followed
 5. Creating output Hive tables ( external table) on top of the directory in Step 4
 6. Generating report (HTML report ) on top of the data generated in Step 4. 
 ( Sample report my_html_file.html available in repository )
+
 Assumptions:
 ------------
 1. for Q1 - Average of each Question’s "Data_Value" by year for all age groups
