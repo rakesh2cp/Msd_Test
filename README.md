@@ -5,7 +5,7 @@ Solution approach and assumptions are as below.
 Steps To be Followed 
 --------------------
 
-1. Download the file from the source link.
+1. Download the data file from the source link.
 2. Remove the header from the file before pushing the file to HDFS.
 3. Create the source Hive table (external table).
 4. Running the ETL ( as mentioned in the email) from Spark (Scala)on the data pushed to HDFS in Step 2.
