@@ -24,6 +24,10 @@ Assumptions:
 	/user/hive/nutrition_data
 	/user/hive/msd_export_female
 	/user/hive/msd_export_all
+3. Below tables should not exist under msd database in Hive
+
+nutrition_data, avg_data_val_all_age_grp, avg_data_val_female
+
 
 
 
