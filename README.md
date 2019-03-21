@@ -29,11 +29,11 @@ Assumptions:
 
 Versions followed to build this project are as follows
 ------------------------------------------------------
-Java 1.8
-Scala 2.11
-Apache Spark 2.3.3
-Apache Hadoop 2.7.3
-Apache Hive 1.2.2
+Java 1.8,
+Scala 2.11,
+Apache Spark 2.3.3,
+Apache Hadoop 2.7.3,
+Apache Hive 1.2.2,
 
 Building and running the program.
 ---------------------------------
