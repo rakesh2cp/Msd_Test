@@ -1,6 +1,6 @@
 # Msd_Test
 
-My solution approach and assumptions are as below.
+Solution approach and assumptions are as below.
 
 Steps To be Followed 
 --------------------
@@ -15,3 +15,38 @@ Steps To be Followed
 6. Generating report (HTML report ) on from the data generated in Step 4. ( Sample Html ( file name my_html_file.html) report available in repository )
 	under the directory the script is running.
 
+Assumptions:
+----------
+1. for Q1 - Average of each Question’s "Data_Value" by year for all age groups
+ Since the YearStart and YearEnd are same for all the rows hence the grouping is done on YearStart column.
+
+2. Below hdfs directories not exist in the running environment 
+	/user/hive/nutrition_data
+	/user/hive/msd_export_female
+	/user/hive/msd_export_all
+
+
+
+Versions followed to build this project are as follows
+------------------------------------------------------
+Java 1.8
+Scala 2.11
+Apache Spark 2.3.3
+Apache Hadoop 2.7.3
+Apache Hive 1.2.2
+
+Building and running the program.
+---------------------------------
+The project can be build in  Scala IDE with above version dependencies.
+Once project is build the JAR_PATH and CONF_PATH variables need to be changed as per the paths where jar and application.cof is present in the environment its running.
+The hostName  need to be changed as per the environment its running ( e.g. hostName = "hdfs://0.0.0.0:9000" in my case)
+change.
+
+The following hdfs directories need to be deleted in case they exist in the running environment.
+
+/user/hive/nutrition_data, /user/hive/msd_export_female and /user/hive/msd_export_all
+
+
+To run the ETL flow issue the below command where the script is located.
+
+sh -x msd_data_populate.sh > msd.log 2>&1
