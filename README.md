@@ -28,7 +28,7 @@ Assumptions:
 
 nutrition_data, avg_data_val_all_age_grp, avg_data_val_female
 
-3. Sandbox / Hadoop, Hive, Spark setup already available.
+4. Sandbox / Hadoop, Hive, Spark setup already available.
 
 Versions followed to build this project are as follows
 ------------------------------------------------------
