@@ -1,31 +1,42 @@
+#!/bin/bash
+
+############################################################
+# This script fetches Nutritional data from the source URL #
+# The Spark programs performs the necessary tranformations #
+# and writes the output to HDFS directory				   #
+# Finally HTML reports generated out of the Output files   #
+# from Spark programs                                      #
+############################################################
 
 msd_data_populate(){
 
+JAR_PATH="/Users/hduser/workspace/MsdTest/target"
+CONF_PATH="/Users/hduser/bdapps/spark-2.3.3-bin-hadoop2.7/bin"
 echo " Deleting if Source files exist"
 rm -f Nutrition_data_raw.csv Nutrition_data.csv
 
 echo " Fetching Source File from URL"
-# Please use wget in Linix and curl for Mac OS
-#wget -O Nutrition_data_raw.csv https://chronicdata.cdc.gov/views/735e-byxc/rows.csv?accessType=DOWNLOAD
-curl -o Nutrition_data_raw.csv https://chronicdata.cdc.gov/views/735e-byxc/rows.csv?accessType=DOWNLOAD
+# Please use wget in Linux and curl for Mac OS
+wget -O Nutrition_data_raw.csv https://chronicdata.cdc.gov/views/735e-byxc/rows.csv?accessType=DOWNLOAD
+# curl -o Nutrition_data_raw.csv https://chronicdata.cdc.gov/views/735e-byxc/rows.csv?accessType=DOWNLOAD
 sleep 5
 echo " Fetching Source File from URL Completed"
 
 awk 'NR>1' Nutrition_data_raw.csv > Nutrition_data.csv
 
-sh /Users/hduser/bdapps/hadoop-2.7.7/bin/hdfs dfs -mkdir /user/hive/nutrition_data
+hdfs dfs -mkdir /user/hive/nutrition_data
 
-sh /Users/hduser/bdapps/hadoop-2.7.7/bin/hdfs dfs -put Nutrition_data.csv /user/hive/nutrition_data
+hdfs dfs -put Nutrition_data.csv /user/hive/nutrition_data
 
 echo " Creating Source Hive table"
-sh /Users/hduser/bdapps/apache-hive-1.2.2-bin/bin/hive -f input_table_ddl.hql
+hive -f input_table_ddl.hql
 echo " Creating Source Hive table Completed"
 
 echo " Running ETL Now"
-sh /Users/hduser/bdapps/spark-2.3.3-bin-hadoop2.7/bin/spark-submit  --class com.msd.test.AvgvalAllAgeGrp /Users/hduser/workspace/MsdTest/target/MsdTest-0.0.1-SNAPSHOT-jar-with-dependencies.jar /Users/hduser/bdapps/spark-2.3.3-bin-hadoop2.7/bin/application.conf
+sh spark-submit  --class com.msd.test.AvgvalAllAgeGrp ${JAR_PATH}/MsdTest-0.0.1-SNAPSHOT-jar-with-dependencies.jar ${CONF_PATH}/application.conf
 echo " ETL Completed.. Creating Output Tables"
 
-sh /Users/hduser/bdapps/apache-hive-1.2.2-bin/bin/hive -f output_table_ddl.hql
+hive -f output_table_ddl.hql
 echo "Output Tables Created"
 
 echo " Creating Reports"
@@ -35,5 +46,3 @@ echo " Reports Created"
 }
 
 msd_data_populate
-
-exit 0
