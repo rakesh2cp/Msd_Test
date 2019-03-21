@@ -65,9 +65,6 @@ StructField("Stratification1" , StringType ,  true),
 StructField("StratificationCategoryId1" , StringType ,  true),
 StructField("StratificationID1" , StringType, true)))
 
-// Source file path on Local
-val fileSystemPath = "/Users/hduser/bdapps/msd/Nutrition_data.csv" 
-
 // Source file path on HDFS 
 val hdfsInputFilePath = hostName + inputPath + "/Nutrition_data.csv"
 
