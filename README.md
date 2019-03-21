@@ -2,7 +2,7 @@
 
 Solution approach and assumptions are as below.
 
-Steps To be Followed 
+Steps Followed 
 --------------------
 
 1. Download the data file from the source link.
