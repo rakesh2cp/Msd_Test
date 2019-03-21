@@ -48,11 +48,10 @@ TABLE_BODY_SET='
   ALL_FILE_CSV=${out_filename}.csv
   FEM_FILE_CSV=${out_filename}_2.csv
 
-cd /Users/hduser/bdapps/hadoop-2.7.7/bin
 
-./hdfs dfs -cat /user/hive/msd_export_all/*.csv > ${ALL_FILE_CSV}
+hdfs dfs -cat /user/hive/msd_export_all/*.csv > ${ALL_FILE_CSV}
 
-./hdfs dfs -cat /user/hive/msd_export_female/*.csv > ${FEM_FILE_CSV}
+hdfs dfs -cat /user/hive/msd_export_female/*.csv > ${FEM_FILE_CSV}
 
 
 
