@@ -13,7 +13,7 @@ stored as textfile
 location '/user/hive/msd_export_all';
 
 drop table if exists msd.avg_data_val_female;
-CREATE TABLE `msd.avg_data_val_female`(
+CREATE external TABLE  `msd.avg_data_val_female`(
   `gender` string, 
   `question` string, 
   `yearstart` string, 
